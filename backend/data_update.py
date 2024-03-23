@@ -48,7 +48,7 @@ def data_runner(graph_data, timespan, multi, days_ago):
         print(highs)
 
         try:
-            graph_data.loc[ticker_index] = {'ticker': current_ticker, 'open': np.array(open), 'closed': np.array(closed), 'high': np.array(highs), 'low': np.array(lows), 
+            graph_data.loc[ticker_index] = {'GICS Sector': graph_data.loc[ticker_index]["GICS Sector"], 'ticker': current_ticker, 'open': np.array(open), 'closed': np.array(closed), 'high': np.array(highs), 'low': np.array(lows), 
                                             'index': np.array(time_index), 'time_span': timespan, 'time_value': multi,
                                             'start_date': start_date}
             print("set ticker " + current_ticker)
@@ -60,9 +60,8 @@ def data_runner(graph_data, timespan, multi, days_ago):
         graph_data.to_csv(graph_data_path, index=False)
 
         ticker_index = ticker_index + 1
-        if ticker_index > 2: #remove this line to get rid of limitations
-            loop_running = False
+        #if ticker_index > 2: #remove this line to get rid of limitations
+        #    loop_running = False
 
 graph_data = pd.read_csv(graph_data_path, dtype=object)
-
 data_runner(graph_data, "hour", "1", 1)
