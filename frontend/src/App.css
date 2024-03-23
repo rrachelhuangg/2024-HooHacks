@@ -1,3 +1,6 @@
+body{background-color: #333;
+color:white;}
+  
 .App {
   text-align: center;
 }
@@ -48,7 +51,8 @@
   padding: 16px;
   /* height: 100%; */
   margin: 5px;
-  background-color: #cccccc;
+  background-color: #333;
+  outline: 1px dotted white;
 }
 
 ul {
@@ -57,6 +61,14 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #333;
+}
+
+.header{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #338a44;
 }
 
 li {
@@ -79,4 +91,56 @@ li a:hover {
 .tickerContainer img{
   /* height:100%; */
   width:90%;
+}
+
+.buyButton {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgb(118, 255, 159);
+  padding: 5px 40px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.sellButton {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgb(253, 136, 96);
+  padding: 5px 40px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.buyButton:hover {
+  color: rgb(219, 219, 219);
+  background: rgb(46, 161, 81);
+  cursor: pointer;
+  font-weight:bold;
+}
+
+.sellButton:hover {
+  color: rgb(223, 223, 223);
+  font-weight: bold;
+  background: rgb(255, 113, 66);
+  cursor: pointer;
+}
+
+.loginPage{
+  text-align:center;
+  margin-top:25vh;
+}
+
+.inputField{
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgb(46, 161, 81);
+  padding: 5px 40px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
 }
