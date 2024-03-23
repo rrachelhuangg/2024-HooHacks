@@ -64,8 +64,17 @@ function Control(props) {
         }, [page]);
   const [displayLogin, setLogin] = useState(props.displayLogin);
   const [name, setName] = useState("");
+  const [money, setMoney] = useState(0);
+  const [stocks, setStocks] = useState([]);
   const handleSubmit = (event) => {
     setLogin(false);
+    // const userName = JSON.stringify({name});
+    // const blob = new Blob([{name}], { type: "text/plain" });
+    // const url = URL.createObjectURL(blob);
+    // const link = document.createElement("a");
+    // link.download = "Users.json";
+    // link.href = url;
+    // link.click();
   }
   //scuffed way of redirecting after login (toggles login stuff)
   if (displayLogin) {
@@ -85,8 +94,8 @@ function Control(props) {
   return(<><NavBar/><div class="container">
   <div class="column">
     <h2> {name}'s current stats </h2>
-  <p> money</p>
-  <p> stocks they hold</p>
+  <p>Money: {money}</p>
+  <p>Portfolio: {stocks}</p>
   </div>
   <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
   <h2> stock visualizations </h2>
