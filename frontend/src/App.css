@@ -1,5 +1,7 @@
 body{background-color: #333;
-  color:white;}
+  color:white;
+  font-family: 'Franklin Gothic', sans-serif;
+}
     
   .App {
     text-align: center;
@@ -7,6 +9,22 @@ body{background-color: #333;
 
   button{
     cursor:pointer;
+  }
+
+  .page-item{
+    background-color: #3b3b3b;
+  }
+
+  .pagination{
+    background-color: #3b3b3b;
+  }
+
+  .active{
+    background-color: #3b3b3b;
+  }
+
+  .graphs{
+    background-color: #3b3b3b;
   }
   
   .App-logo {
@@ -39,8 +57,8 @@ body{background-color: #333;
   padding: 16px;
   /* height: 100%; */
   margin: 1px;
-  background-color: #333;
-  outline: 1px dotted white;
+  background-color: #666666;
+  /* outline: 1px dotted white; */
 }
 
 ul {
@@ -48,7 +66,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  background-color: #3b3b3b;
 }
 
 .header{
@@ -79,8 +97,13 @@ ul {
   font-weight:bolder;
 }
 
+.special{
+  background-color:#333
+}
+
 li {
   float: left;
+  background-color: #3b3b3b;
 }
 
 li a {
@@ -89,16 +112,13 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+  background-color: #3b3b3b;
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
   background-color: #111;
-}
-
-.tickerContainer img{
-  /* height:100%; */
-  width:90%;
+  background-color: #3b3b3b;
 }
 
 .buyButton {
@@ -262,8 +282,8 @@ li a:hover {
     padding: 16px;
     /* height: 100%; */
     margin: 1px;
-    background-color: #333;
-    outline: 1px dotted white;
+    background-color: #3b3b3b;
+    /* outline: 1px dotted white; */
   }
   
   ul {
@@ -302,6 +322,7 @@ li a:hover {
   .tickerContainer img{
     /* height:100%; */
     width:90%;
+    background-color: #3b3b3b;
   }
   
   .buyButton {
@@ -475,7 +496,6 @@ li a:hover {
   
   .spacing{
     margin-top:5vh;
-  }
-
+  } 
 
   

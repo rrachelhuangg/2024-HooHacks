@@ -115,7 +115,7 @@ for(let i = 0; i < stockPortfolio.length; i++){
     return(<>
     <div className = "tickerContainer">
     <div>Ticker: {stockTicker} Value: ${parseFloat(closeVal.trim()).toFixed(2)}</div>
-    <img src = {path} className = "images"/>
+    <img src = {path}/>
       <button className = "buyButton" onClick = {buy}>Buy</button>
       <button className = "sellButton" onClick = {sell}>Sell</button></div></>
       );
@@ -186,7 +186,7 @@ for(let i = 0; i < stockPortfolio.length; i++){
   function NavBar(){
     return(<>
     <ul className = "header">
-      <li><img src = "./Logo.png" className="logoHeader"/></li>
+      <li className = "special"><img src = "./Logo.png" className="logoHeader"/></li>
       <button onClick={logout}>Log Out</button>
     </ul></>);
   }
