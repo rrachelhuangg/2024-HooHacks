@@ -6,13 +6,62 @@ import ReactPaginate from "react-paginate"; // for pagination
 //can read .csv file data and display it on the page: if we write data that we collect from the api to a csv
 //file, we will be able to use it in react 
 
-function NavBar(){
+let acceptedClients = {};
+function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
+  const [bgC, setBGC] = useState("");
+  const [vB, setVB] = useState("visible");
+  function acceptClient(){
+    acceptedClients[clientName]=[desiredReturns, dueDate, givenMoney];
+    setBGC("red");
+    setVB("hidden");
+  }
+
+
   return(<>
-  <ul className = "header">
-  <li><img src = "./Logo.png" className="logoHeader"/></li>
-</ul></>);
+    <div className = "clientComponent" style={{backgroundColor:bgC}}>
+    <div><strong>{clientName}</strong></div>
+    <div>Desired Returns: {desiredReturns}</div>
+    <div>Due In {dueDate} Days</div>
+    <div>Provided Money: {givenMoney}</div>
+    <div style={{visibility:vB}}>
+    <button className = "acceptButton" onClick = {acceptClient}>Accept</button><button className = "declineButton">Decline</button>
+    </div></div>
+    </>);
 }
 
+<<<<<<< HEAD
+=======
+function hasCookie(cookie_name) {
+  let decoded_cs = decodeURIComponent(document.cookie);
+  if(decoded_cs.match(cookie_name) > 0) {
+    return true;
+  }
+  return false;
+}
+
+function getCookie(cookie_name) {
+  let decoded_cs = decodeURIComponent(document.cookie);
+  let ca = decoded_cs.split(";")
+  ca.forEach((cookie) => {
+    while(cookie.charAt(0) == ' ') {cookie = cookie.substring(1)}
+    if(cookie.indexOf(cookie_name) == 0) {
+      return cookie.substring(cookie_name.length + 1)
+    }
+  });
+  return ""
+}
+
+function deleteCookie(cookie_name) {
+  document.cookie = cookie_name + "=;";
+}
+
+var closeValues = [];
+var stockTickers = [];
+
+
+
+
+>>>>>>> 245c34acba7725e8d1a196ff805f9fee30f6d30c
 var closeValues = ["150.94"];
 var stockTickers = ["MMM"];
 let clients = [];
@@ -136,12 +185,27 @@ for(let i = 0; i < stockPortfolio.length; i++){
         
   
   const handleSubmit = (event) => {
+    
     setLogin(false);
   }
 
+  function NavBar(){
+    return(<>
+    <ul className = "header">
+      <li><img src = "./Logo.png" className="logoHeader"/></li>
+      <button onClick={logout}>Log Out</button>
+    </ul></>);
+  }
   
+  function logout() {
+    deleteCookie("username")
+    setLogin(true)
+    setName()
+
+  }
+
   //scuffed way of redirecting after login (toggles login stuff)
-  if (displayLogin) {
+  if (displayLogin && getCookie("username").length == 0) {
     return(<>
       <div className = "logoContainer"><img src = "./Logo.png" className="logo"/></div>
     <form className = "loginPage" onSubmit={handleSubmit}>
@@ -150,9 +214,12 @@ for(let i = 0; i < stockPortfolio.length; i++){
           type="text" 
           value={name}
           onChange={(e) => {setName(e.target.value);
+            document.cookie = "username=" + e.target.value + ";";
           }}
+          required
         />
       <div><input className = "inputField" type="submit" /></div>
+      
     </form></>);
   }
 
@@ -232,7 +299,7 @@ function Clients(){
   <div className = "spacing"></div>
   {portfolioArray.map((item, index) => <div className = "grid">{item}</div>)}
   </div>
-  <div class="column" >
+  <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
   <h2> Stocks </h2>
   <ul>
 {filterData && filterData.map((item, index) => <li>{item}</li>)}
