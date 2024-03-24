@@ -60,6 +60,8 @@ def data_runner(graph_data, timespan, multi, days_ago):
         graph_data.to_csv(graph_data_path, index=False)
 
         ticker_index = ticker_index + 1
+        if ticker_index > len(graph_data.index):
+            ticker_index = 0
         #if ticker_index > 2: #remove this line to get rid of limitations
         #    loop_running = False
 
