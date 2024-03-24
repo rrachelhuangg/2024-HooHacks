@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { useEffect, useState } from "react"; // useState for storing data and useEffect for changing data on click 
+import { useEffect, useState, useMemo } from "react"; // useState for storing data and useEffect for changing data on click 
 import * as React from 'react';
 import ReactPaginate from "react-paginate"; // for pagination
 
@@ -14,35 +14,17 @@ function NavBar(){
 </ul></>);
 }
 
-let acceptedClients = {};
-function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
-  const [bgC, setBGC] = useState("");
-  const [vB, setVB] = useState("visible");
-  function acceptClient(){
-    acceptedClients[clientName]=[desiredReturns, dueDate, givenMoney];
-    setBGC("red");
-    setVB("hidden");
-  }
 
 
-  return(<>
-    <div className = "clientComponent" style={{backgroundColor:bgC}}>
-    <div><strong>{clientName}</strong></div>
-    <div>Desired Returns: {desiredReturns}</div>
-    <div>Due In {dueDate} Days</div>
-    <div>Provided Money: {givenMoney}</div>
-    <div style={{visibility:vB}}>
-    <button className = "acceptButton" onClick = {acceptClient}>Accept</button><button className = "declineButton">Decline</button>
-    </div></div>
-    </>);
-}
 
 
-var closeValues = [];
-var stockTickers = [];
+var closeValues = ["150.94"];
+var stockTickers = ["MMM"];
+let clients = [];
 var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL","APD","ALB","ARE","LNT","ALL","AEE","AAL","AEP","AXP","AIG","AMT"];
 //AMD is the last png obtained
 function Control(props) {
+  
 const [displayLogin, setLogin] = useState(props.displayLogin);
 const [name, setName] = useState("");
 const [money, setMoney] = useState(1000);
@@ -76,22 +58,21 @@ const n = 1;
 
     return(<>
     <div className = "tickerContainer">
-    <div>{stockTicker}:${closeVal}</div>
+    <div>Ticker: {stockTicker} Value: ${closeVal}</div>
     <img src = {path} className = "images"/>
       <button className = "buyButton" onClick = {buy}>Buy</button>
       <button className = "sellButton" onClick = {sell}>Sell</button></div></>
       );
   }
 
+
   const [ text, setText ] = useState();
-  const [dueDisplay, setDueDisplay] = useState(true);
-  function toggleDueDisplay(){
-    setDueDisplay(!dueDisplay);
-  }
+
   const[dueCurrent, setCurrentDisplay] = useState(false);
   function toggleCurrentDisplay(){
     setCurrentDisplay(!dueCurrent);
   }
+    
 
     fetch( './graph_data.csv' )
         .then( response => response.text() )
@@ -110,6 +91,7 @@ const n = 1;
               }
             }
         })
+
         
         const rows = [];
         for (let i = 0; i < 500; i++) {
@@ -123,51 +105,14 @@ const n = 1;
             })
           );
         }, [page]);
+
+        
   
   const handleSubmit = (event) => {
     setLogin(false);
   }
 
-  function Clients(){
-    let clients = [];
-    for(let i = 0; i < 3; i++){
-      let clientNames = [
-        "Innovatech Solutions",
-        "TechGenius",
-        "CodeCrafters Inc.",
-        "ByteWorks Technology",
-        "DigitalDreams Tech",
-        "NexTech Innovations",
-        "CyberNest Solutions",
-        "QuantumLeap Tech",
-        "Synapse Systems",
-        "CloudSavvy Tech",
-        "FutureForge Technologies",
-        "InfinitiTech Labs",
-        "DataDynamo",
-        "Streamline Solutions",
-        "PixelPulse Technology",
-        "TechTonic Innovations",
-        "InnovaSoft",
-        "ByteBurst Tech",
-        "Visionary Ventures Inc.",
-        "CodeWave Tech",
-        "InfiniteLoop Solutions",
-        "TechSphere Innovations",
-        "DataDynasty",
-        "CyberCrafters Inc.",
-        "QuantumShift Technology"
-    ]
-    ;
-      let desiredReturn = Math.floor(Math.random() * (100));
-      let DueDate = Math.floor(Math.random() * (100));
-      let givenMoneys = Math.floor(Math.random() * (100));
-      let clientName = clientNames[Math.floor(Math.random()*26)];
-      clients.push(<ClientComponent clientName = {clientName} desiredReturns = {desiredReturn} dueDate = {DueDate} givenMoney = {givenMoneys}/>)
-    }
-    
-    return(<>{clients}</>);
-  }
+  
   //scuffed way of redirecting after login (toggles login stuff)
   if (displayLogin) {
     return(<>
@@ -184,18 +129,84 @@ const n = 1;
     </form></>);
   }
 
-  if(dueDisplay){
+  let acceptedClients = {};
+function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
+  const [bgC, setBGC] = useState("");
+  const [vB, setVB] = useState("visible");
+  function acceptClient(){
+    acceptedClients[clientName]=[desiredReturns, dueDate, givenMoney];
+    console.log(acceptedClients);
+    setBGC("red");
+    setVB("hidden");
+    setMoney(money+givenMoney);
+  }
+
+  return(<>
+    <div className = "clientComponent" style={{backgroundColor:bgC}}>
+    <div><strong>{clientName}</strong></div>
+    <div>Desired Returns: {desiredReturns}</div>
+    <div>Due In {dueDate} Days</div>
+    <div>Provided Money: {givenMoney}</div>
+    <div style={{visibility:vB}}>
+    <button className = "acceptButton" onClick = {acceptClient}>Accept</button><button className = "declineButton">Decline</button>
+    </div></div>
+    </>);
+}
+
+
+function Clients(){
+  if(clients.length!=3){
+  for(let i = 0; i < 3; i++){
+    let clientNames = [
+      "Innovatech Solutions",
+      "TechGenius",
+      "CodeCrafters Inc.",
+      "ByteWorks Technology",
+      "DigitalDreams Tech",
+      "NexTech Innovations",
+      "CyberNest Solutions",
+      "QuantumLeap Tech",
+      "Synapse Systems",
+      "CloudSavvy Tech",
+      "FutureForge Technologies",
+      "InfinitiTech Labs",
+      "DataDynamo",
+      "Streamline Solutions",
+      "PixelPulse Technology",
+      "TechTonic Innovations",
+      "InnovaSoft",
+      "ByteBurst Tech",
+      "Visionary Ventures Inc.",
+      "CodeWave Tech",
+      "InfiniteLoop Solutions",
+      "TechSphere Innovations",
+      "DataDynasty",
+      "CyberCrafters Inc.",
+      "QuantumShift Technology"
+  ]
+  ;
+    let desiredReturn = Math.floor(Math.random() * (5));
+    let DueDate = Math.floor(Math.random() * (50)+50);
+    let givenMoneys = Math.floor(Math.random() * (10)*1000);
+    let clientName = clientNames[Math.floor(Math.random()*26)];
+    clients.push(<ClientComponent clientName = {clientName} desiredReturns = {desiredReturn} dueDate = {DueDate} givenMoney = {givenMoneys}/>)
+  }
+}
+  return(<>{clients}</>);
+}
+
+  if(true){
   return(
   <><NavBar/><div class="container">
   <div class="column">
-    <h2> {name}'s current stats </h2>
+    <h2> User: {name}</h2>
   <p>Money: ${money}</p>
   <p>Portfolio: {stockPortfolio}</p>
   </div>
-  <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
-  <h2> stock visualizations </h2>
+  <div class="column" >
+  <h2> Stocks </h2>
   <ul>
-{filterData && filterData.map((item, index) => <li>Stock Ticker:{item}</li>)}
+{filterData && filterData.map((item, index) => <li>{item}</li>)}
 </ul>
 <ReactPaginate
   containerClassName={"pagination"}
@@ -213,61 +224,18 @@ const n = 1;
   }
 />
 
-
-
   </div>
+
   <div class="column">
     <h2> Clients </h2>
-    <div className = "clientButtons">
-    <button className = "clientButton" onClick = {toggleDueDisplay}>Client Information</button>
-
     <Clients/>
-    
-    {/* <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
-    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
-    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/> */}
-    </div>
+
   </div>
 </div> </>);}
-else if(dueDisplay==false){
-  return(
-    <><NavBar/><div class="container">
-    <div class="column">
-      <h2> {name}'s current stats </h2>
-    <p>Money: ${money}</p>
-    <p>Portfolio: {stockPortfolio}</p>
-    </div>
-    <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
-    <h2> stock visualizations </h2>
-    <ul>
-  {filterData && filterData.map((item, index) => <li>Stock Ticker:{item}</li>)}
-  </ul>
-  <ReactPaginate
-    containerClassName={"pagination"}
-    pageClassName={"page-item"}
-    activeClassName={"active"}
-    className = "graphs"
-    onPageChange={(event) => setPage(event.selected)}
-    pageCount={Math.ceil(rows.length / n)}
-    breakLabel="..."
-    previousLabel={
-      "<"
-    }
-    nextLabel={
-      ">"
-    }
-  />
-  
-    </div>
-    <div class="column">
-      <h2> Clients </h2>
-      <div className = "clientButtons">
-      <button className = "clientButton" onClick = {toggleDueDisplay}>Client Information</button>
-      </div>
-    </div>
-  </div> </>);
 }
-}
+
+
+
 
 function App() {
 
