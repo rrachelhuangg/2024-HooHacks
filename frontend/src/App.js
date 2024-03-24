@@ -3,10 +3,6 @@ import './App.css';
 import { useEffect, useState } from "react"; // useState for storing data and useEffect for changing data on click 
 import * as React from 'react';
 import ReactPaginate from "react-paginate"; // for pagination
-import styled from "styled-components";
-import mpld3_load_lib from "./mpld3_load_lib";
-import mpld3 from 'mpld3'
-import _json from "./plot_b.json"
 
 //can read .csv file data and display it on the page: if we write data that we collect from the api to a csv
 //file, we will be able to use it in react 
@@ -21,24 +17,9 @@ function NavBar(){
 </ul></>);
 }
 
-function MatPlotLibFig(){
-  const fig_name = "fig_el427345810798888193429725"
-  return <div>
-    <script>
-      mpld3_load_lib("https://d3js.org/d3.v5.js", function () {
-        mpld3_load_lib("https://mpld3.github.io/js/mpld3.v0.5.8.js", function () {
-          mpld3.remove_figure(fig_name)
-          mpld3.draw_figure(fig_name, _json);
-        })
-      });
-    </script>
-    <div id={fig_name}></div>
-  </div>
-}
-
 var closeValues = [];
 var stockTickers = [];
-var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL"];
+var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL","APD","ALB","ARE","LNT","ALL","AEE","AAL","AEP"];
 function Control(props) {
 const [displayLogin, setLogin] = useState(props.displayLogin);
 const [name, setName] = useState("");
@@ -48,7 +29,7 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
   const [filterData, setFilterData] = useState();
   const n = 1;
 
-  function TickerDisplay({index, closeVal, stockTicker}){
+  function TickerDisplay({closeVal, stockTicker}){
     function buy(){
       if(money-parseFloat(closeVal.trim())>=0){
         setStockPortfolio([...stockPortfolio, " ", stockTicker]);
@@ -62,19 +43,25 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
       }
       setStockPortfolio(stockPortfolio.filter(s => s !== stockTicker));
     }
+    var path = "./";
+    if(stockTicker!==undefined){
+      path += stockTicker.trim();
+    }
+    else{
+      path += "MMM";
+    }   
+    path += ".png";
+
     return(<>
     <div className = "tickerContainer">
     <div>{stockTicker}:${closeVal}</div>
-    <img src = "./AppleFirstTest.png" className = "images"/>
+    <img src = {path} className = "images"/>
       <button className = "buyButton" onClick = {buy}>Buy</button>
       <button className = "sellButton" onClick = {sell}>Sell</button></div></>
       );
   }
 
   const [ text, setText ] = useState();
-  var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  
-  var x = 1;
 
     fetch( './graph_data.csv' )
         .then( response => response.text() )
@@ -155,9 +142,12 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
 
   </div>
   <div class="column">
-    <h2> other info </h2>
-    <pre>{ text }</pre>
-    {/* <MatPlotLibFig/> */}
+    <h2> Clients </h2>
+    <div className = "clientButtons">
+    <button className = "clientButton">Due</button>
+    <button className = "clientButton">Current</button>
+    <button className = "clientButton">Offers</button>
+    </div>
   </div>
 </div> </>);
 }

@@ -144,3 +144,23 @@ li a:hover {
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
 }
+
+.clientButton{
+  display:inline-block;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgb(225, 225, 225);
+  padding: 5px 25px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.clientButton:hover {
+  color: rgb(223, 223, 223);
+  font-weight: bold;
+  background: rgb(46, 161, 81);
+  cursor: pointer;
+}
+
