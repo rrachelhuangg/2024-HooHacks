@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState } from "react"; // useState for storing data and useEffect for changing data on click 
 import * as React from 'react';
@@ -6,13 +5,6 @@ import ReactPaginate from "react-paginate"; // for pagination
 
 //can read .csv file data and display it on the page: if we write data that we collect from the api to a csv
 //file, we will be able to use it in react 
-
-function NavBar(){
-  return(<>
-  <ul className = "header">
-  <li><img src = "./Logo.png" className="logoHeader"/></li>
-</ul></>);
-}
 
 let acceptedClients = {};
 function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
@@ -37,6 +29,30 @@ function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
     </>);
 }
 
+function hasCookie(cookie_name) {
+  let decoded_cs = decodeURIComponent(document.cookie);
+  if(decoded_cs.match(cookie_name) > 0) {
+    return true;
+  }
+  return false;
+}
+
+function getCookie(cookie_name) {
+  let decoded_cs = decodeURIComponent(document.cookie);
+  let ca = decoded_cs.split(";")
+  ca.forEach((cookie) => {
+    while(cookie.charAt(0) == ' ') {cookie = cookie.substring(1)}
+    if(cookie.indexOf(cookie_name) == 0) {
+      console.log("here " + cookie + " " + cookie_name)
+      return cookie.substring(cookie_name.length + 1)
+    }
+  });
+  return ""
+}
+
+function deleteCookie(cookie_name) {
+  document.cookie = cookie_name + "=;";
+}
 
 var closeValues = [];
 var stockTickers = [];
@@ -50,6 +66,25 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
 const [page, setPage] = useState(0);
 const [filterData, setFilterData] = useState();
 const n = 1;
+
+function NavBar(){
+  return(<>
+  <div style={{display : 'block'}}>
+    <ul className = "header">
+      <li><img src = "./Logo.png" className="logoHeader"/></li>
+      <button style={{float : 'right'}} onClick={logout}>Log Out</button>
+    </ul>
+  </div>
+  </>);
+}
+
+function logout() {
+  deleteCookie("username");
+  setLogin(true);
+  console.log(displayLogin);
+  setName()
+  
+}
 
   function TickerDisplay({closeVal, stockTicker}){
     function buy(){
@@ -125,6 +160,7 @@ const n = 1;
         }, [page]);
   
   const handleSubmit = (event) => {
+    
     setLogin(false);
   }
 
@@ -169,7 +205,7 @@ const n = 1;
     return(<>{clients}</>);
   }
   //scuffed way of redirecting after login (toggles login stuff)
-  if (displayLogin) {
+  if (displayLogin && getCookie("username").length == 0) {
     return(<>
       <div className = "logoContainer"><img src = "./Logo.png" className="logo"/></div>
     <form className = "loginPage" onSubmit={handleSubmit}>
@@ -178,7 +214,9 @@ const n = 1;
           type="text" 
           value={name}
           onChange={(e) => {setName(e.target.value);
+            document.cookie = "username=" + e.target.value + ";";
           }}
+          required
         />
       <div><input className = "inputField" type="submit" /></div>
     </form></>);
@@ -193,7 +231,7 @@ const n = 1;
   <p>Portfolio: {stockPortfolio}</p>
   </div>
   <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
-  <h2> stock visualizations </h2>
+  <h2> Stock Visualizations </h2>
   <ul>
 {filterData && filterData.map((item, index) => <li>Stock Ticker:{item}</li>)}
 </ul>
