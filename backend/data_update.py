@@ -39,7 +39,6 @@ def data_runner(graph_data_path, timespan, multi, days_ago):
 
         end_date = datetime.now().strftime('%Y-%m-%d') #makes string of today
         start_date = (datetime.now() - timedelta(days_ago)).strftime('%Y-%m-%d') #makes string of starting day
-
         aggs = get_data(current_ticker, timespan, multi, start_date, end_date)
 
         for i, a in enumerate(aggs):
@@ -48,8 +47,6 @@ def data_runner(graph_data_path, timespan, multi, days_ago):
             opened += [a.open]
             closed += [a.close]
             time_index += [i]
-
-        print(highs)
         graph_data = {}
         try:
             graph_data = pd.DataFrame({'open': opened, 'closed': closed, 'high': highs, 'low': lows, 
@@ -65,7 +62,8 @@ def data_runner(graph_data_path, timespan, multi, days_ago):
         graph_data.to_csv(path, index=False)
 
         ticker_index = ticker_index + 1
-        if ticker_index > len(string_data.index):
+        print("scraped " + current_ticker)
+        if ticker_index >= len(string_data.index):
             ticker_index = 0
         #if ticker_index > 2: #remove this line to get rid of limitations
         #    loop_running = False

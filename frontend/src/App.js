@@ -44,9 +44,9 @@ const [displayLogin, setLogin] = useState(props.displayLogin);
 const [name, setName] = useState("");
 const [money, setMoney] = useState(1000);
 const [stockPortfolio, setStockPortfolio] = useState([]);
-  const [page, setPage] = useState(0);
-  const [filterData, setFilterData] = useState();
-  const n = 1;
+const [page, setPage] = useState(0);
+const [filterData, setFilterData] = useState();
+const n = 1;
 
   function TickerDisplay({index, closeVal, stockTicker}){
     function buy(){
