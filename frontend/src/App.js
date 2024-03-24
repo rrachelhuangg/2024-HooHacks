@@ -26,16 +26,7 @@ function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
     </>);
 }
 
-function DueClients(props){
-  const [displayDueClients, setDueClients] = useState(props.displayDueClient);
-  if(displayDueClients==true){
-    return (<ClientComponent clientName="Hello" desiredReturns = "0" dueDate = "0" givenMoney = "0"/>);
-  }
-  else{
-    return (<div>Hello World</div>);
-  }
-}
-
+var pseudoRandom = 0;
 var closeValues = [];
 var stockTickers = [];
 var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL","APD","ALB","ARE","LNT","ALL","AEE","AAL","AEP"];
@@ -51,12 +42,14 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
 
   function TickerDisplay({closeVal, stockTicker}){
     function buy(){
+      pseudoRandom+=1
       if(money-parseFloat(closeVal.trim())>=0){
         setStockPortfolio([...stockPortfolio, " ", stockTicker]);
         setMoney(money-parseFloat(closeVal.trim()));
       }
     }
     function sell(){
+      pseudoRandom+=1
       var temp = stockPortfolio;
       if(temp.filter(s => s !== stockTicker).length!=(stockPortfolio.length)){
         setMoney(money+parseFloat(closeVal.trim()));
@@ -82,6 +75,14 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
   }
 
   const [ text, setText ] = useState();
+  const [dueDisplay, setDueDisplay] = useState(true);
+  function toggleDueDisplay(){
+    setDueDisplay(!dueDisplay);
+  }
+  const[dueCurrent, setCurrentDisplay] = useState(false);
+  function toggleCurrentDisplay(){
+    setCurrentDisplay(!dueCurrent);
+  }
 
     fetch( './graph_data.csv' )
         .then( response => response.text() )
@@ -119,7 +120,8 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
   }
   //scuffed way of redirecting after login (toggles login stuff)
   if (displayLogin) {
-    return(
+    return(<>
+      <div className = "logoContainer"><img src = "./Logo.png" className="logo"/></div>
     <form className = "loginPage" onSubmit={handleSubmit}>
       <div><label>Enter your name:</label></div>
         <input 
@@ -129,10 +131,16 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
           }}
         />
       <div><input className = "inputField" type="submit" /></div>
-    </form>);
+    </form></>);
   }
-  
-  return(<><NavBar/><div class="container">
+
+  if(pseudoRandom%3==0){
+    //make random clients here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+  }
+
+  if(dueDisplay){
+  return(
+  <><NavBar/><div class="container">
   <div class="column">
     <h2> {name}'s current stats </h2>
   <p>Money: ${money}</p>
@@ -159,17 +167,55 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
   }
 />
 
-
   </div>
   <div class="column">
     <h2> Clients </h2>
     <div className = "clientButtons">
-    <button className = "clientButton">Due</button>
-    <button className = "clientButton">Current</button>
-    <button className = "clientButton">Offers</button>
+    <button className = "clientButton" onClick = {toggleDueDisplay}>Client Information</button>
+    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
+    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
+    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
     </div>
   </div>
-</div> </>);
+</div> </>);}
+else if(dueDisplay==false){
+  return(
+    <><NavBar/><div class="container">
+    <div class="column">
+      <h2> {name}'s current stats </h2>
+    <p>Money: ${money}</p>
+    <p>Portfolio: {stockPortfolio}</p>
+    </div>
+    <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
+    <h2> stock visualizations </h2>
+    <ul>
+  {filterData && filterData.map((item, index) => <li>Stock Ticker:{item}</li>)}
+  </ul>
+  <ReactPaginate
+    containerClassName={"pagination"}
+    pageClassName={"page-item"}
+    activeClassName={"active"}
+    className = "graphs"
+    onPageChange={(event) => setPage(event.selected)}
+    pageCount={Math.ceil(rows.length / n)}
+    breakLabel="..."
+    previousLabel={
+      "<"
+    }
+    nextLabel={
+      ">"
+    }
+  />
+  
+    </div>
+    <div class="column">
+      <h2> Clients </h2>
+      <div className = "clientButtons">
+      <button className = "clientButton" onClick = {toggleDueDisplay}>Client Information</button>
+      </div>
+    </div>
+  </div> </>);
+}
 }
 
 function App() {
@@ -177,7 +223,6 @@ function App() {
   return (
     <>
     <Control displayLogin={true} />
-    <DueClients displayDueClient={true}/>
   </>
   );
 }

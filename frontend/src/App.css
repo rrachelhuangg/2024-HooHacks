@@ -131,7 +131,7 @@ li a:hover {
 
 .loginPage{
   text-align:center;
-  margin-top:25vh;
+  margin-top:5vh;
 }
 
 .inputField{
@@ -150,7 +150,7 @@ li a:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
   background: rgb(225, 225, 225);
-  padding: 5px 25px;
+  padding: 5px 50px;
   border-radius: 4px;
   font-weight: normal;
   text-transform: uppercase;
@@ -162,5 +162,14 @@ li a:hover {
   font-weight: bold;
   background: rgb(46, 161, 81);
   cursor: pointer;
+}
+
+.logo{
+  width:30vw;
+}
+
+.logoContainer{
+  text-align:center;
+  margin-top:10vh;
 }
 
