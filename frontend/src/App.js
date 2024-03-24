@@ -32,8 +32,26 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
 const [page, setPage] = useState(0);
 const [filterData, setFilterData] = useState();
 const n = 1;
+let portfolioStats = {};
+for(let i = 0; i < stockPortfolio.length; i++){
+  if(stockPortfolio[i] in portfolioStats){
+    portfolioStats[stockPortfolio[i]]+=1;
+  }
+  else{
+    portfolioStats[stockPortfolio[i]]=1;
+  }
+}
+
+  function PortfolioElement({stockTicker, count, value}){
+    return(<><div className = "grid"><span><strong>{stockTicker}</strong></span><span>{count}</span><span><strong className = "biggerText">${value}</strong></span></div>
+    </>);
+  }
+
 
   function TickerDisplay({closeVal, stockTicker}){
+    if(typeof(closeVal)===undefined){
+      closeVal="105.94"
+    }
     function buy(){
       if(money-parseFloat(closeVal.trim())>=0){
         setStockPortfolio([...stockPortfolio, " ", stockTicker]);
@@ -58,7 +76,7 @@ const n = 1;
 
     return(<>
     <div className = "tickerContainer">
-    <div>Ticker: {stockTicker} Value: ${closeVal}</div>
+    <div>Ticker: {stockTicker} Value: ${parseFloat(closeVal.trim()).toFixed(2)}</div>
     <img src = {path} className = "images"/>
       <button className = "buyButton" onClick = {buy}>Buy</button>
       <button className = "sellButton" onClick = {sell}>Sell</button></div></>
@@ -92,6 +110,20 @@ const n = 1;
             }
         })
 
+        let portfolioArray = [];
+        let x = 0;
+        for (const [key, value] of Object.entries(portfolioStats)) {
+          let multiply = 0;
+          if(typeof(closeValues[x])!==undefined){
+            multiply = closeValues[x];
+          }
+          // portfolioArray.push([key, value, parseFloat(value)*parseFloat(multiply).toFixed(2)]);
+          portfolioArray.push(<PortfolioElement stockTicker = {key} count = {value} value = {parseFloat(value)*parseFloat(multiply).toFixed(2)}/>);
+          console.log("Key value pair: ", [key, value, value*closeValues[x+1]]);
+          console.log("portfolio array: ", portfolioArray);
+          x += 1;
+        }
+        portfolioArray = portfolioArray.slice(1,);
         
         const rows = [];
         for (let i = 0; i < 500; i++) {
@@ -144,9 +176,9 @@ function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
   return(<>
     <div className = "clientComponent" style={{backgroundColor:bgC}}>
     <div><strong>{clientName}</strong></div>
-    <div>Desired Returns: {desiredReturns}</div>
+    <div>Desired % APY: {desiredReturns}%</div>
     <div>Due In {dueDate} Days</div>
-    <div>Provided Money: {givenMoney}</div>
+    <div>${givenMoney}</div>
     <div style={{visibility:vB}}>
     <button className = "acceptButton" onClick = {acceptClient}>Accept</button><button className = "declineButton">Decline</button>
     </div></div>
@@ -198,10 +230,12 @@ function Clients(){
   if(true){
   return(
   <><NavBar/><div class="container">
-  <div class="column">
+  <div class="column firstColumn">
     <h2> User: {name}</h2>
-  <p>Money: ${money}</p>
-  <p>Portfolio: {stockPortfolio}</p>
+  <p>Money: ${money.toFixed(2)}</p>
+  <h2>Portfolio: </h2>
+  <div className = "spacing"></div>
+  {portfolioArray.map((item, index) => <div className = "grid">{item}</div>)}
   </div>
   <div class="column" >
   <h2> Stocks </h2>

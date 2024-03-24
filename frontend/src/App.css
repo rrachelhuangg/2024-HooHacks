@@ -229,3 +229,29 @@ li a:hover {
   font-weight: bold;
   cursor: pointer;
 }
+
+.biggerText{
+  font-size:4vh;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 33.33% 33.33% 33.33%;
+  grid-template-rows: 4vh 4vh;
+  text-align:center;
+  align-items:center;
+  
+}
+
+div{
+  text-align:center;
+}
+
+.firstColumn{
+  text-align: left;
+}
+
+.spacing{
+  margin-top:5vh;
+}
