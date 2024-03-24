@@ -120,7 +120,7 @@ for(let i = 0; i < stockPortfolio.length; i++){
     return(<>
     <div className = "tickerContainer">
     <div>Ticker: {stockTicker} Value: ${parseFloat(closeVal.trim()).toFixed(2)}</div>
-    <img src = {path} className = "images"/>
+    <img src = {path}/>
       <button className = "buyButton" onClick = {buy}>Buy</button>
       <button className = "sellButton" onClick = {sell}>Sell</button></div></>
       );
@@ -191,7 +191,7 @@ for(let i = 0; i < stockPortfolio.length; i++){
   function NavBar(){
     return(<>
     <ul className = "header">
-      <li><img src = "./Logo.png" className="logoHeader"/></li>
+      <li className = "special"><img src = "./Logo.png" className="logoHeader"/></li>
       <button onClick={logout}>Log Out</button>
     </ul></>);
   }
@@ -298,7 +298,7 @@ function Clients(){
   <div className = "spacing"></div>
   {portfolioArray.map((item, index) => <div className = "grid">{item}</div>)}
   </div>
-  <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
+  <div class="column">
   <h2> Stocks </h2>
   <ul>
 {filterData && filterData.map((item, index) => <li>{item}</li>)}
