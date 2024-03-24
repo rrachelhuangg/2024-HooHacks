@@ -3,9 +3,12 @@ import './App.css';
 import { useEffect, useState } from "react"; // useState for storing data and useEffect for changing data on click 
 import * as React from 'react';
 import ReactPaginate from "react-paginate"; // for pagination
+import LoginForm from "./LoginForm.js"
 
 //can read .csv file data and display it on the page: if we write data that we collect from the api to a csv
 //file, we will be able to use it in react 
+
+
 
 function NavBar(){
   return(<>
@@ -41,7 +44,6 @@ var stockTickers = [];
 var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL","APD","ALB","ARE","LNT","ALL","AEE","AAL","AEP"];
 
 function Control(props) {
-const [displayLogin, setLogin] = useState(props.displayLogin);
 const [name, setName] = useState("");
 const [money, setMoney] = useState(1000);
 const [stockPortfolio, setStockPortfolio] = useState([]);
@@ -114,23 +116,6 @@ const n = 1;
           );
         }, [page]);
   
-  const handleSubmit = (event) => {
-    setLogin(false);
-  }
-  //scuffed way of redirecting after login (toggles login stuff)
-  if (displayLogin) {
-    return(
-    <form className = "loginPage" onSubmit={handleSubmit}>
-      <div><label>Enter your name:</label></div>
-        <input 
-          type="text" 
-          value={name}
-          onChange={(e) => {setName(e.target.value);
-          }}
-        />
-      <div><input className = "inputField" type="submit" /></div>
-    </form>);
-  }
   
   return(<><NavBar/><div class="container">
   <div class="column">
@@ -176,6 +161,7 @@ function App() {
 
   return (
     <>
+    <div><LoginForm/></div>
     <Control displayLogin={true} />
     <DueClients displayDueClient={true}/>
   </>
