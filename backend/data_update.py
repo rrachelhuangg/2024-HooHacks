@@ -33,9 +33,7 @@ def data_runner(graph_data_path, timespan, multi, days_ago):
     ticker_index = 0
     while(loop_running):
         current_ticker = tickers[ticker_index]
-        print(current_ticker)
         path = graph_data_path + current_ticker + ".csv"
-        print(path)
 
         aggs, opened, closed, highs, lows, time_index = (([] for i in range(0, 6)))
 
