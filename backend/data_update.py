@@ -9,7 +9,7 @@ from polygon import RESTClient
 client = RESTClient(api_key="h8IoGYiQLCNjfJfU7je02JpmLrk4SJF9")
 
 home = os.path.expanduser("~")
-graph_data_path = os.path.join(home, "2024-HooHacks", "resources", "")
+graph_data_path = os.path.join(home, "2024-HooHacks", "frontend", "public", "")
 
 
 def get_data(ticker, timespan, multiplier, start_date, end_date):

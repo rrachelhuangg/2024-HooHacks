@@ -7,7 +7,7 @@ import time
 import numpy as np
 
 home = os.path.expanduser("~")
-graph_data_path = os.path.join(home, "2024-HooHacks", "resources", "")
+graph_data_path = os.path.join(home, "2024-HooHacks", "frontend", "public", "")
 
 def make_graphs(graph_data_path):
     loop_running = True

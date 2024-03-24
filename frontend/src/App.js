@@ -29,8 +29,6 @@ function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
     </>);
 }
 
-<<<<<<< HEAD
-=======
 function hasCookie(cookie_name) {
   let decoded_cs = decodeURIComponent(document.cookie);
   if(decoded_cs.match(cookie_name) > 0) {
@@ -61,7 +59,6 @@ var stockTickers = [];
 
 
 
->>>>>>> 245c34acba7725e8d1a196ff805f9fee30f6d30c
 var closeValues = ["150.94"];
 var stockTickers = ["MMM"];
 let clients = [];
@@ -104,10 +101,12 @@ for(let i = 0; i < stockPortfolio.length; i++){
     }
     function sell(){
       var temp = stockPortfolio;
-      if(temp.filter(s => s !== stockTicker).length!=(stockPortfolio.length)){
+      if(temp.filter(s => s == stockTicker).length>0){
         setMoney(money+parseFloat(closeVal.trim()));
       }
       setStockPortfolio(stockPortfolio.filter(s => s !== stockTicker));
+        
+      
     }
     var path = "./";
     if(stockTicker!==undefined){
