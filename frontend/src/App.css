@@ -269,6 +269,7 @@ li a:hover {
   grid-template-rows: 4vh 4vh;
   text-align:center;
   align-items:center;
+  padding-left:1vw;
 }
   
   .container {
@@ -491,7 +492,7 @@ li a:hover {
   }
   
   .firstColumn{
-    text-align: left;
+    text-align: center;
   }
   
   .spacing{
