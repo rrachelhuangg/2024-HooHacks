@@ -43,7 +43,6 @@ function getCookie(cookie_name) {
   ca.forEach((cookie) => {
     while(cookie.charAt(0) == ' ') {cookie = cookie.substring(1)}
     if(cookie.indexOf(cookie_name) == 0) {
-      console.log("here " + cookie + " " + cookie_name)
       return cookie.substring(cookie_name.length + 1)
     }
   });
@@ -187,9 +186,23 @@ for(let i = 0; i < stockPortfolio.length; i++){
     setLogin(false);
   }
 
+  function NavBar(){
+    return(<>
+    <ul className = "header">
+      <li><img src = "./Logo.png" className="logoHeader"/></li>
+      <button onClick={logout}>Log Out</button>
+    </ul></>);
+  }
   
+  function logout() {
+    deleteCookie("username")
+    setLogin(true)
+    setName()
+
+  }
+
   //scuffed way of redirecting after login (toggles login stuff)
-  if (displayLogin) {
+  if (displayLogin && getCookie("username").length == 0) {
     return(<>
       <div className = "logoContainer"><img src = "./Logo.png" className="logo"/></div>
     <form className = "loginPage" onSubmit={handleSubmit}>
@@ -198,9 +211,12 @@ for(let i = 0; i < stockPortfolio.length; i++){
           type="text" 
           value={name}
           onChange={(e) => {setName(e.target.value);
+            document.cookie = "username=" + e.target.value + ";";
           }}
+          required
         />
       <div><input className = "inputField" type="submit" /></div>
+      
     </form></>);
   }
 
