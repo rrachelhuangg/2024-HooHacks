@@ -29,8 +29,6 @@ function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
     </>);
 }
 
-<<<<<<< HEAD
-=======
 function hasCookie(cookie_name) {
   let decoded_cs = decodeURIComponent(document.cookie);
   if(decoded_cs.match(cookie_name) > 0) {
@@ -58,10 +56,6 @@ function deleteCookie(cookie_name) {
 var closeValues = [];
 var stockTickers = [];
 
-
-
-
->>>>>>> 245c34acba7725e8d1a196ff805f9fee30f6d30c
 var closeValues = ["150.94"];
 var stockTickers = ["MMM"];
 let clients = [];
@@ -299,7 +293,7 @@ function Clients(){
   <div className = "spacing"></div>
   {portfolioArray.map((item, index) => <div className = "grid">{item}</div>)}
   </div>
-  <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
+  <div class="column">
   <h2> Stocks </h2>
   <ul>
 {filterData && filterData.map((item, index) => <li>{item}</li>)}
