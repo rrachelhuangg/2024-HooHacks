@@ -11,14 +11,6 @@ import _json from "./plot_b.json"
 //can read .csv file data and display it on the page: if we write data that we collect from the api to a csv
 //file, we will be able to use it in react 
 
-const AppContainer = styled.div`
-  width: 100%;
-  height: 100%;
-`;
-
-
-
-
 function NavBar(){
   return(<>
   <ul className = "header">
@@ -44,44 +36,67 @@ function MatPlotLibFig(){
   </div>
 }
 
-function TickerDisplay({value}){
-  return(<>
-  <div className = "tickerContainer">
-  <div>{value}</div>
-  <img src = "./AppleFirstTest.png" className = "images"/>
-    <button className = "buyButton">Buy</button>
-    <button className = "sellButton">Sell</button></div></>
-    );
-}
-
+var closeValues = [];
+var stockTickers = [];
+var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL"];
 function Control(props) {
+const [displayLogin, setLogin] = useState(props.displayLogin);
+const [name, setName] = useState("");
+const [money, setMoney] = useState(1000);
+const [stockPortfolio, setStockPortfolio] = useState([]);
   const [page, setPage] = useState(0);
   const [filterData, setFilterData] = useState();
   const n = 1;
 
+  function TickerDisplay({index, closeVal, stockTicker}){
+    function buy(){
+      if(money-parseFloat(closeVal.trim())>=0){
+        setStockPortfolio([...stockPortfolio, " ", stockTicker]);
+        setMoney(money-parseFloat(closeVal.trim()));
+      }
+    }
+    function sell(){
+      var temp = stockPortfolio;
+      if(temp.filter(s => s !== stockTicker).length!=(stockPortfolio.length)){
+        setMoney(money+parseFloat(closeVal.trim()));
+      }
+      setStockPortfolio(stockPortfolio.filter(s => s !== stockTicker));
+    }
+    return(<>
+    <div className = "tickerContainer">
+    <div>{stockTicker}:${closeVal}</div>
+    <img src = "./AppleFirstTest.png" className = "images"/>
+      <button className = "buyButton" onClick = {buy}>Buy</button>
+      <button className = "sellButton" onClick = {sell}>Sell</button></div></>
+      );
+  }
+
   const [ text, setText ] = useState();
   var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  
+  var x = 1;
 
     fetch( './graph_data.csv' )
         .then( response => response.text() )
         .then( responseText => {
-            setText(responseText.slice(0, 1000));
-            for(var i = 0;i < responseText.length; i++) {
-             if(letters.includes(responseText.charAt(i).toUpperCase())){
-                console.log("ticker found"); //goal: get close values for each stock
-                console.log(responseText.charAt(i));
-                break;
-             }
-             
-            };
+            setText(responseText.slice(0, 2000));
+            for(var i = 0; i < responseText.length; i++){
+              if(stockz.includes(responseText.slice(i,i+3).trim())){
+                stockTickers.push(responseText.slice(i,i+3).trim());
+                var j = 0;
+              }//need to slice close values correctly
+              if(responseText.charAt(i)==']' && j==0){
+                var idx = responseText.slice(i-10,i-1).lastIndexOf(' ');
+                closeValues.push(responseText.slice(i-8,i).trim());
+                j += 1 //only want the first closing bracket for each stock ticker
+                //get stock ticker for this close value and pass it to TickerDisplay
+              }
+            }
         })
-    
         
-        
-
         const rows = [];
         for (let i = 0; i < 500; i++) {
-            rows.push(<TickerDisplay value={i+1} />);
+            rows.push(<TickerDisplay index={i+1} closeVal={closeValues[i]} stockTicker={stockTickers[i]} />); //instead of passing i value, pass stock close value when ready
         }
 
         useEffect(() => {
@@ -91,10 +106,7 @@ function Control(props) {
             })
           );
         }, [page]);
-  const [displayLogin, setLogin] = useState(props.displayLogin);
-  const [name, setName] = useState("");
-  const [money, setMoney] = useState(0);
-  const [stocks, setStocks] = useState([]);
+  
   const handleSubmit = (event) => {
     setLogin(false);
   }
@@ -116,8 +128,8 @@ function Control(props) {
   return(<><NavBar/><div class="container">
   <div class="column">
     <h2> {name}'s current stats </h2>
-  <p>Money: {money}</p>
-  <p>Portfolio: {stocks}</p>
+  <p>Money: ${money}</p>
+  <p>Portfolio: {stockPortfolio}</p>
   </div>
   <div class="column" style={{ height: '100vh', overflow: 'scroll' }}>
   <h2> stock visualizations </h2>
