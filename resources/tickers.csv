@@ -1,0 +1,504 @@
+,ticker,GICS Sector,time_span,time_value,start_date
+0,MMM,Industrials,hour,1,3/22/2024
+1,AOS,Industrials,hour,1,3/22/2024
+2,ABT,Health Care,hour,1,3/22/2024
+3,ABBV,Health Care,hour,1,3/22/2024
+4,ACN,Information Technology,hour,1,3/22/2024
+5,ADBE,Information Technology,hour,1,3/22/2024
+6,AMD,Information Technology,hour,1,3/22/2024
+7,AES,Utilities,hour,1,3/22/2024
+8,AFL,Financials,hour,1,3/22/2024
+9,A,Health Care,hour,1,3/22/2024
+10,APD,Materials,hour,1,3/22/2024
+11,ABNB,Consumer Discretionary,hour,1,3/22/2024
+12,AKAM,Information Technology,hour,1,3/22/2024
+13,ALB,Materials,hour,1,3/22/2024
+14,ARE,Real Estate,hour,1,3/22/2024
+15,ALGN,Health Care,hour,1,3/22/2024
+16,ALLE,Industrials,hour,1,3/22/2024
+17,LNT,Utilities,hour,1,3/22/2024
+18,ALL,Financials,hour,1,3/22/2024
+19,GOOGL,Communication Services,hour,1,3/22/2024
+20,GOOG,Communication Services,hour,1,3/22/2024
+21,MO,Consumer Staples,hour,1,3/22/2024
+22,AMZN,Consumer Discretionary,hour,1,3/22/2024
+23,AMCR,Materials,hour,1,3/22/2024
+24,AEE,Utilities,hour,1,3/22/2024
+25,AAL,Industrials,hour,1,3/22/2024
+26,AEP,Utilities,hour,1,3/22/2024
+27,AXP,Financials,hour,1,3/22/2024
+28,AIG,Financials,hour,1,3/22/2024
+29,AMT,Real Estate,hour,1,3/22/2024
+30,AWK,Utilities,hour,1,3/22/2024
+31,AMP,Financials,hour,1,3/22/2024
+32,AME,Industrials,hour,1,3/22/2024
+33,AMGN,Health Care,hour,1,3/22/2024
+34,APH,Information Technology,hour,1,3/22/2024
+35,ADI,Information Technology,hour,1,3/22/2024
+36,ANSS,Information Technology,hour,1,3/22/2024
+37,AON,Financials,hour,1,3/22/2024
+38,APA,Energy,hour,1,3/22/2024
+39,AAPL,Information Technology,hour,1,3/22/2024
+40,AMAT,Information Technology,hour,1,3/22/2024
+41,APTV,Consumer Discretionary,hour,1,3/22/2024
+42,ACGL,Financials,hour,1,3/22/2024
+43,ADM,Consumer Staples,hour,1,3/22/2024
+44,ANET,Information Technology,hour,1,3/22/2024
+45,AJG,Financials,hour,1,3/22/2024
+46,AIZ,Financials,hour,1,3/22/2024
+47,T,Communication Services,hour,1,3/22/2024
+48,ATO,Utilities,hour,1,3/22/2024
+49,ADSK,Information Technology,hour,1,3/22/2024
+50,ADP,Industrials,hour,1,3/22/2024
+51,AZO,Consumer Discretionary,hour,1,3/22/2024
+52,AVB,Real Estate,hour,1,3/22/2024
+53,AVY,Materials,hour,1,3/22/2024
+54,AXON,Industrials,hour,1,3/22/2024
+55,BKR,Energy,hour,1,3/22/2024
+56,BALL,Materials,hour,1,3/22/2024
+57,BAC,Financials,hour,1,3/22/2024
+58,BK,Financials,hour,1,3/22/2024
+59,BBWI,Consumer Discretionary,hour,1,3/22/2024
+60,BAX,Health Care,hour,1,3/22/2024
+61,BDX,Health Care,hour,1,3/22/2024
+62,BRK.B,Financials,hour,1,3/22/2024
+63,BBY,Consumer Discretionary,hour,1,3/22/2024
+64,BIO,Health Care,hour,1,3/22/2024
+65,TECH,Health Care,hour,1,3/22/2024
+66,BIIB,Health Care,hour,1,3/22/2024
+67,BLK,Financials,hour,1,3/22/2024
+68,BX,Financials,hour,1,3/22/2024
+69,BA,Industrials,hour,1,3/22/2024
+70,BKNG,Consumer Discretionary,hour,1,3/22/2024
+71,BWA,Consumer Discretionary,hour,1,3/22/2024
+72,BXP,Real Estate,hour,1,3/22/2024
+73,BSX,Health Care,hour,1,3/22/2024
+74,BMY,Health Care,hour,1,3/22/2024
+75,AVGO,Information Technology,hour,1,3/22/2024
+76,BR,Industrials,hour,1,3/22/2024
+77,BRO,Financials,hour,1,3/22/2024
+78,BF.B,Consumer Staples,hour,1,3/22/2024
+79,BLDR,Industrials,hour,1,3/22/2024
+80,BG,Consumer Staples,hour,1,3/22/2024
+81,CDNS,Information Technology,hour,1,3/22/2024
+82,CZR,Consumer Discretionary,hour,1,3/22/2024
+83,CPT,Real Estate,hour,1,3/22/2024
+84,CPB,Consumer Staples,hour,1,3/22/2024
+85,COF,Financials,hour,1,3/22/2024
+86,CAH,Health Care,hour,1,3/22/2024
+87,KMX,Consumer Discretionary,hour,1,3/22/2024
+88,CCL,Consumer Discretionary,hour,1,3/22/2024
+89,CARR,Industrials,hour,1,3/22/2024
+90,CTLT,Health Care,hour,1,3/22/2024
+91,CAT,Industrials,hour,1,3/22/2024
+92,CBOE,Financials,hour,1,3/22/2024
+93,CBRE,Real Estate,hour,1,3/22/2024
+94,CDW,Information Technology,hour,1,3/22/2024
+95,CE,Materials,hour,1,3/22/2024
+96,COR,Health Care,hour,1,3/22/2024
+97,CNC,Health Care,hour,1,3/22/2024
+98,CNP,Utilities,hour,1,3/22/2024
+99,CF,Materials,hour,1,3/22/2024
+100,CHRW,Industrials,hour,1,3/22/2024
+101,CRL,Health Care,hour,1,3/22/2024
+102,SCHW,Financials,hour,1,3/22/2024
+103,CHTR,Communication Services,hour,1,3/22/2024
+104,CVX,Energy,hour,1,3/22/2024
+105,CMG,Consumer Discretionary,hour,1,3/22/2024
+106,CB,Financials,hour,1,3/22/2024
+107,CHD,Consumer Staples,hour,1,3/22/2024
+108,CI,Health Care,hour,1,3/22/2024
+109,CINF,Financials,hour,1,3/22/2024
+110,CTAS,Industrials,hour,1,3/22/2024
+111,CSCO,Information Technology,hour,1,3/22/2024
+112,C,Financials,hour,1,3/22/2024
+113,CFG,Financials,hour,1,3/22/2024
+114,CLX,Consumer Staples,hour,1,3/22/2024
+115,CME,Financials,hour,1,3/22/2024
+116,CMS,Utilities,hour,1,3/22/2024
+117,KO,Consumer Staples,hour,1,3/22/2024
+118,CTSH,Information Technology,hour,1,3/22/2024
+119,CL,Consumer Staples,hour,1,3/22/2024
+120,CMCSA,Communication Services,hour,1,3/22/2024
+121,CMA,Financials,hour,1,3/22/2024
+122,CAG,Consumer Staples,hour,1,3/22/2024
+123,COP,Energy,hour,1,3/22/2024
+124,ED,Utilities,hour,1,3/22/2024
+125,STZ,Consumer Staples,hour,1,3/22/2024
+126,CEG,Utilities,hour,1,3/22/2024
+127,COO,Health Care,hour,1,3/22/2024
+128,CPRT,Industrials,hour,1,3/22/2024
+129,GLW,Information Technology,hour,1,3/22/2024
+130,CTVA,Materials,hour,1,3/22/2024
+131,CSGP,Real Estate,hour,1,3/22/2024
+132,COST,Consumer Staples,hour,1,3/22/2024
+133,CTRA,Energy,hour,1,3/22/2024
+134,CCI,Real Estate,hour,1,3/22/2024
+135,CSX,Industrials,hour,1,3/22/2024
+136,CMI,Industrials,hour,1,3/22/2024
+137,CVS,Health Care,hour,1,3/22/2024
+138,DHR,Health Care,hour,1,3/22/2024
+139,DRI,Consumer Discretionary,hour,1,3/22/2024
+140,DVA,Health Care,hour,1,3/22/2024
+141,DAY,Industrials,hour,1,3/22/2024
+142,DECK,Consumer Discretionary,hour,1,3/22/2024
+143,DE,Industrials,hour,1,3/22/2024
+144,DAL,Industrials,hour,1,3/22/2024
+145,XRAY,Health Care,hour,1,3/22/2024
+146,DVN,Energy,hour,1,3/22/2024
+147,DXCM,Health Care,hour,1,3/22/2024
+148,FANG,Energy,hour,1,3/22/2024
+149,DLR,Real Estate,hour,1,3/22/2024
+150,DFS,Financials,hour,1,3/22/2024
+151,DG,Consumer Staples,hour,1,3/22/2024
+152,DLTR,Consumer Staples,hour,1,3/22/2024
+153,D,Utilities,hour,1,3/22/2024
+154,DPZ,Consumer Discretionary,hour,1,3/22/2024
+155,DOV,Industrials,hour,1,3/22/2024
+156,DOW,Materials,hour,1,3/22/2024
+157,DHI,Consumer Discretionary,hour,1,3/22/2024
+158,DTE,Utilities,hour,1,3/22/2024
+159,DUK,Utilities,hour,1,3/22/2024
+160,DD,Materials,hour,1,3/22/2024
+161,EMN,Materials,hour,1,3/22/2024
+162,ETN,Industrials,hour,1,3/22/2024
+163,EBAY,Consumer Discretionary,hour,1,3/22/2024
+164,ECL,Materials,hour,1,3/22/2024
+165,EIX,Utilities,hour,1,3/22/2024
+166,EW,Health Care,hour,1,3/22/2024
+167,EA,Communication Services,hour,1,3/22/2024
+168,ELV,Health Care,hour,1,3/22/2024
+169,LLY,Health Care,hour,1,3/22/2024
+170,EMR,Industrials,hour,1,3/22/2024
+171,ENPH,Information Technology,hour,1,3/22/2024
+172,ETR,Utilities,hour,1,3/22/2024
+173,EOG,Energy,hour,1,3/22/2024
+174,EPAM,Information Technology,hour,1,3/22/2024
+175,EQT,Energy,hour,1,3/22/2024
+176,EFX,Industrials,hour,1,3/22/2024
+177,EQIX,Real Estate,hour,1,3/22/2024
+178,EQR,Real Estate,hour,1,3/22/2024
+179,ESS,Real Estate,hour,1,3/22/2024
+180,EL,Consumer Staples,hour,1,3/22/2024
+181,ETSY,Consumer Discretionary,hour,1,3/22/2024
+182,EG,Financials,hour,1,3/22/2024
+183,EVRG,Utilities,hour,1,3/22/2024
+184,ES,Utilities,hour,1,3/22/2024
+185,EXC,Utilities,hour,1,3/22/2024
+186,EXPE,Consumer Discretionary,hour,1,3/22/2024
+187,EXPD,Industrials,hour,1,3/22/2024
+188,EXR,Real Estate,hour,1,3/22/2024
+189,XOM,Energy,hour,1,3/22/2024
+190,FFIV,Information Technology,hour,1,3/22/2024
+191,FDS,Financials,hour,1,3/22/2024
+192,FICO,Information Technology,hour,1,3/22/2024
+193,FAST,Industrials,hour,1,3/22/2024
+194,FRT,Real Estate,hour,1,3/22/2024
+195,FDX,Industrials,hour,1,3/22/2024
+196,FIS,Financials,hour,1,3/22/2024
+197,FITB,Financials,hour,1,3/22/2024
+198,FSLR,Information Technology,hour,1,3/22/2024
+199,FE,Utilities,hour,1,3/22/2024
+200,FI,Financials,hour,1,3/22/2024
+201,FLT,Financials,hour,1,3/22/2024
+202,FMC,Materials,hour,1,3/22/2024
+203,F,Consumer Discretionary,hour,1,3/22/2024
+204,FTNT,Information Technology,hour,1,3/22/2024
+205,FTV,Industrials,hour,1,3/22/2024
+206,FOXA,Communication Services,hour,1,3/22/2024
+207,FOX,Communication Services,hour,1,3/22/2024
+208,BEN,Financials,hour,1,3/22/2024
+209,FCX,Materials,hour,1,3/22/2024
+210,GRMN,Consumer Discretionary,hour,1,3/22/2024
+211,IT,Information Technology,hour,1,3/22/2024
+212,GEHC,Health Care,hour,1,3/22/2024
+213,GEN,Information Technology,hour,1,3/22/2024
+214,GNRC,Industrials,hour,1,3/22/2024
+215,GD,Industrials,hour,1,3/22/2024
+216,GE,Industrials,hour,1,3/22/2024
+217,GIS,Consumer Staples,hour,1,3/22/2024
+218,GM,Consumer Discretionary,hour,1,3/22/2024
+219,GPC,Consumer Discretionary,hour,1,3/22/2024
+220,GILD,Health Care,hour,1,3/22/2024
+221,GPN,Financials,hour,1,3/22/2024
+222,GL,Financials,hour,1,3/22/2024
+223,GS,Financials,hour,1,3/22/2024
+224,HAL,Energy,hour,1,3/22/2024
+225,HIG,Financials,hour,1,3/22/2024
+226,HAS,Consumer Discretionary,hour,1,3/22/2024
+227,HCA,Health Care,hour,1,3/22/2024
+228,DOC,Real Estate,hour,1,3/22/2024
+229,HSIC,Health Care,hour,1,3/22/2024
+230,HSY,Consumer Staples,hour,1,3/22/2024
+231,HES,Energy,hour,1,3/22/2024
+232,HPE,Information Technology,hour,1,3/22/2024
+233,HLT,Consumer Discretionary,hour,1,3/22/2024
+234,HOLX,Health Care,hour,1,3/22/2024
+235,HD,Consumer Discretionary,hour,1,3/22/2024
+236,HON,Industrials,hour,1,3/22/2024
+237,HRL,Consumer Staples,hour,1,3/22/2024
+238,HST,Real Estate,hour,1,3/22/2024
+239,HWM,Industrials,hour,1,3/22/2024
+240,HPQ,Information Technology,hour,1,3/22/2024
+241,HUBB,Industrials,hour,1,3/22/2024
+242,HUM,Health Care,hour,1,3/22/2024
+243,HBAN,Financials,hour,1,3/22/2024
+244,HII,Industrials,hour,1,3/22/2024
+245,IBM,Information Technology,hour,1,3/22/2024
+246,IEX,Industrials,hour,1,3/22/2024
+247,IDXX,Health Care,hour,1,3/22/2024
+248,ITW,Industrials,hour,1,3/22/2024
+249,ILMN,Health Care,hour,1,3/22/2024
+250,INCY,Health Care,hour,1,3/22/2024
+251,IR,Industrials,hour,1,3/22/2024
+252,PODD,Health Care,hour,1,3/22/2024
+253,INTC,Information Technology,hour,1,3/22/2024
+254,ICE,Financials,hour,1,3/22/2024
+255,IFF,Materials,hour,1,3/22/2024
+256,IP,Materials,hour,1,3/22/2024
+257,IPG,Communication Services,hour,1,3/22/2024
+258,INTU,Information Technology,hour,1,3/22/2024
+259,ISRG,Health Care,hour,1,3/22/2024
+260,IVZ,Financials,hour,1,3/22/2024
+261,INVH,Real Estate,hour,1,3/22/2024
+262,IQV,Health Care,hour,1,3/22/2024
+263,IRM,Real Estate,hour,1,3/22/2024
+264,JBHT,Industrials,hour,1,3/22/2024
+265,JBL,Information Technology,hour,1,3/22/2024
+266,JKHY,Financials,hour,1,3/22/2024
+267,J,Industrials,hour,1,3/22/2024
+268,JNJ,Health Care,hour,1,3/22/2024
+269,JCI,Industrials,hour,1,3/22/2024
+270,JPM,Financials,hour,1,3/22/2024
+271,JNPR,Information Technology,hour,1,3/22/2024
+272,K,Consumer Staples,hour,1,3/22/2024
+273,KVUE,Consumer Staples,hour,1,3/22/2024
+274,KDP,Consumer Staples,hour,1,3/22/2024
+275,KEY,Financials,hour,1,3/22/2024
+276,KEYS,Information Technology,hour,1,3/22/2024
+277,KMB,Consumer Staples,hour,1,3/22/2024
+278,KIM,Real Estate,hour,1,3/22/2024
+279,KMI,Energy,hour,1,3/22/2024
+280,KLAC,Information Technology,hour,1,3/22/2024
+281,KHC,Consumer Staples,hour,1,3/22/2024
+282,KR,Consumer Staples,hour,1,3/22/2024
+283,LHX,Industrials,hour,1,3/22/2024
+284,LH,Health Care,hour,1,3/22/2024
+285,LRCX,Information Technology,hour,1,3/22/2024
+286,LW,Consumer Staples,hour,1,3/22/2024
+287,LVS,Consumer Discretionary,hour,1,3/22/2024
+288,LDOS,Industrials,hour,1,3/22/2024
+289,LEN,Consumer Discretionary,hour,1,3/22/2024
+290,LIN,Materials,hour,1,3/22/2024
+291,LYV,Communication Services,hour,1,3/22/2024
+292,LKQ,Consumer Discretionary,hour,1,3/22/2024
+293,LMT,Industrials,hour,1,3/22/2024
+294,L,Financials,hour,1,3/22/2024
+295,LOW,Consumer Discretionary,hour,1,3/22/2024
+296,LULU,Consumer Discretionary,hour,1,3/22/2024
+297,LYB,Materials,hour,1,3/22/2024
+298,MTB,Financials,hour,1,3/22/2024
+299,MRO,Energy,hour,1,3/22/2024
+300,MPC,Energy,hour,1,3/22/2024
+301,MKTX,Financials,hour,1,3/22/2024
+302,MAR,Consumer Discretionary,hour,1,3/22/2024
+303,MMC,Financials,hour,1,3/22/2024
+304,MLM,Materials,hour,1,3/22/2024
+305,MAS,Industrials,hour,1,3/22/2024
+306,MA,Financials,hour,1,3/22/2024
+307,MTCH,Communication Services,hour,1,3/22/2024
+308,MKC,Consumer Staples,hour,1,3/22/2024
+309,MCD,Consumer Discretionary,hour,1,3/22/2024
+310,MCK,Health Care,hour,1,3/22/2024
+311,MDT,Health Care,hour,1,3/22/2024
+312,MRK,Health Care,hour,1,3/22/2024
+313,META,Communication Services,hour,1,3/22/2024
+314,MET,Financials,hour,1,3/22/2024
+315,MTD,Health Care,hour,1,3/22/2024
+316,MGM,Consumer Discretionary,hour,1,3/22/2024
+317,MCHP,Information Technology,hour,1,3/22/2024
+318,MU,Information Technology,hour,1,3/22/2024
+319,MSFT,Information Technology,hour,1,3/22/2024
+320,MAA,Real Estate,hour,1,3/22/2024
+321,MRNA,Health Care,hour,1,3/22/2024
+322,MHK,Consumer Discretionary,hour,1,3/22/2024
+323,MOH,Health Care,hour,1,3/22/2024
+324,TAP,Consumer Staples,hour,1,3/22/2024
+325,MDLZ,Consumer Staples,hour,1,3/22/2024
+326,MPWR,Information Technology,hour,1,3/22/2024
+327,MNST,Consumer Staples,hour,1,3/22/2024
+328,MCO,Financials,hour,1,3/22/2024
+329,MS,Financials,hour,1,3/22/2024
+330,MOS,Materials,hour,1,3/22/2024
+331,MSI,Information Technology,hour,1,3/22/2024
+332,MSCI,Financials,hour,1,3/22/2024
+333,NDAQ,Financials,hour,1,3/22/2024
+334,NTAP,Information Technology,hour,1,3/22/2024
+335,NFLX,Communication Services,hour,1,3/22/2024
+336,NEM,Materials,hour,1,3/22/2024
+337,NWSA,Communication Services,hour,1,3/22/2024
+338,NWS,Communication Services,hour,1,3/22/2024
+339,NEE,Utilities,hour,1,3/22/2024
+340,NKE,Consumer Discretionary,hour,1,3/22/2024
+341,NI,Utilities,hour,1,3/22/2024
+342,NDSN,Industrials,hour,1,3/22/2024
+343,NSC,Industrials,hour,1,3/22/2024
+344,NTRS,Financials,hour,1,3/22/2024
+345,NOC,Industrials,hour,1,3/22/2024
+346,NCLH,Consumer Discretionary,hour,1,3/22/2024
+347,NRG,Utilities,hour,1,3/22/2024
+348,NUE,Materials,hour,1,3/22/2024
+349,NVDA,Information Technology,hour,1,3/22/2024
+350,NVR,Consumer Discretionary,hour,1,3/22/2024
+351,NXPI,Information Technology,hour,1,3/22/2024
+352,ORLY,Consumer Discretionary,hour,1,3/22/2024
+353,OXY,Energy,hour,1,3/22/2024
+354,ODFL,Industrials,hour,1,3/22/2024
+355,OMC,Communication Services,hour,1,3/22/2024
+356,ON,Information Technology,hour,1,3/22/2024
+357,OKE,Energy,hour,1,3/22/2024
+358,ORCL,Information Technology,hour,1,3/22/2024
+359,OTIS,Industrials,hour,1,3/22/2024
+360,PCAR,Industrials,hour,1,3/22/2024
+361,PKG,Materials,hour,1,3/22/2024
+362,PANW,Information Technology,hour,1,3/22/2024
+363,PARA,Communication Services,hour,1,3/22/2024
+364,PH,Industrials,hour,1,3/22/2024
+365,PAYX,Industrials,hour,1,3/22/2024
+366,PAYC,Industrials,hour,1,3/22/2024
+367,PYPL,Financials,hour,1,3/22/2024
+368,PNR,Industrials,hour,1,3/22/2024
+369,PEP,Consumer Staples,hour,1,3/22/2024
+370,PFE,Health Care,hour,1,3/22/2024
+371,PCG,Utilities,hour,1,3/22/2024
+372,PM,Consumer Staples,hour,1,3/22/2024
+373,PSX,Energy,hour,1,3/22/2024
+374,PNW,Utilities,hour,1,3/22/2024
+375,PXD,Energy,hour,1,3/22/2024
+376,PNC,Financials,hour,1,3/22/2024
+377,POOL,Consumer Discretionary,hour,1,3/22/2024
+378,PPG,Materials,hour,1,3/22/2024
+379,PPL,Utilities,hour,1,3/22/2024
+380,PFG,Financials,hour,1,3/22/2024
+381,PG,Consumer Staples,hour,1,3/22/2024
+382,PGR,Financials,hour,1,3/22/2024
+383,PLD,Real Estate,hour,1,3/22/2024
+384,PRU,Financials,hour,1,3/22/2024
+385,PEG,Utilities,hour,1,3/22/2024
+386,PTC,Information Technology,hour,1,3/22/2024
+387,PSA,Real Estate,hour,1,3/22/2024
+388,PHM,Consumer Discretionary,hour,1,3/22/2024
+389,QRVO,Information Technology,hour,1,3/22/2024
+390,PWR,Industrials,hour,1,3/22/2024
+391,QCOM,Information Technology,hour,1,3/22/2024
+392,DGX,Health Care,hour,1,3/22/2024
+393,RL,Consumer Discretionary,hour,1,3/22/2024
+394,RJF,Financials,hour,1,3/22/2024
+395,RTX,Industrials,hour,1,3/22/2024
+396,O,Real Estate,hour,1,3/22/2024
+397,REG,Real Estate,hour,1,3/22/2024
+398,REGN,Health Care,hour,1,3/22/2024
+399,RF,Financials,hour,1,3/22/2024
+400,RSG,Industrials,hour,1,3/22/2024
+401,RMD,Health Care,hour,1,3/22/2024
+402,RVTY,Health Care,hour,1,3/22/2024
+403,RHI,Industrials,hour,1,3/22/2024
+404,ROK,Industrials,hour,1,3/22/2024
+405,ROL,Industrials,hour,1,3/22/2024
+406,ROP,Information Technology,hour,1,3/22/2024
+407,ROST,Consumer Discretionary,hour,1,3/22/2024
+408,RCL,Consumer Discretionary,hour,1,3/22/2024
+409,SPGI,Financials,hour,1,3/22/2024
+410,CRM,Information Technology,hour,1,3/22/2024
+411,SBAC,Real Estate,hour,1,3/22/2024
+412,SLB,Energy,hour,1,3/22/2024
+413,STX,Information Technology,hour,1,3/22/2024
+414,SRE,Utilities,hour,1,3/22/2024
+415,NOW,Information Technology,hour,1,3/22/2024
+416,SHW,Materials,hour,1,3/22/2024
+417,SPG,Real Estate,hour,1,3/22/2024
+418,SWKS,Information Technology,hour,1,3/22/2024
+419,SJM,Consumer Staples,hour,1,3/22/2024
+420,SNA,Industrials,hour,1,3/22/2024
+421,SO,Utilities,hour,1,3/22/2024
+422,LUV,Industrials,hour,1,3/22/2024
+423,SWK,Industrials,hour,1,3/22/2024
+424,SBUX,Consumer Discretionary,hour,1,3/22/2024
+425,STT,Financials,hour,1,3/22/2024
+426,STLD,Materials,hour,1,3/22/2024
+427,STE,Health Care,hour,1,3/22/2024
+428,SYK,Health Care,hour,1,3/22/2024
+429,SMCI,Information Technology,hour,1,3/22/2024
+430,SYF,Financials,,,
+431,SNPS,Information Technology,,,
+432,SYY,Consumer Staples,,,
+433,TMUS,Communication Services,,,
+434,TROW,Financials,,,
+435,TTWO,Communication Services,,,
+436,TPR,Consumer Discretionary,,,
+437,TRGP,Energy,,,
+438,TGT,Consumer Staples,,,
+439,TEL,Information Technology,,,
+440,TDY,Information Technology,,,
+441,TFX,Health Care,,,
+442,TER,Information Technology,,,
+443,TSLA,Consumer Discretionary,,,
+444,TXN,Information Technology,,,
+445,TXT,Industrials,,,
+446,TMO,Health Care,,,
+447,TJX,Consumer Discretionary,,,
+448,TSCO,Consumer Discretionary,,,
+449,TT,Industrials,,,
+450,TDG,Industrials,,,
+451,TRV,Financials,,,
+452,TRMB,Information Technology,,,
+453,TFC,Financials,,,
+454,TYL,Information Technology,,,
+455,TSN,Consumer Staples,,,
+456,USB,Financials,,,
+457,UBER,Industrials,,,
+458,UDR,Real Estate,,,
+459,ULTA,Consumer Discretionary,,,
+460,UNP,Industrials,,,
+461,UAL,Industrials,,,
+462,UPS,Industrials,,,
+463,URI,Industrials,,,
+464,UNH,Health Care,,,
+465,UHS,Health Care,,,
+466,VLO,Energy,,,
+467,VTR,Real Estate,,,
+468,VLTO,Industrials,,,
+469,VRSN,Information Technology,,,
+470,VRSK,Industrials,,,
+471,VZ,Communication Services,,,
+472,VRTX,Health Care,,,
+473,VFC,Consumer Discretionary,,,
+474,VTRS,Health Care,,,
+475,VICI,Real Estate,,,
+476,V,Financials,,,
+477,VMC,Materials,,,
+478,WRB,Financials,,,
+479,WAB,Industrials,,,
+480,WBA,Consumer Staples,,,
+481,WMT,Consumer Staples,,,
+482,DIS,Communication Services,,,
+483,WBD,Communication Services,,,
+484,WM,Industrials,,,
+485,WAT,Health Care,,,
+486,WEC,Utilities,,,
+487,WFC,Financials,,,
+488,WELL,Real Estate,,,
+489,WST,Health Care,,,
+490,WDC,Information Technology,,,
+491,WRK,Materials,,,
+492,WY,Real Estate,,,
+493,WMB,Energy,,,
+494,WTW,Financials,,,
+495,GWW,Industrials,,,
+496,WYNN,Consumer Discretionary,,,
+497,XEL,Utilities,,,
+498,XYL,Industrials,,,
+499,YUM,Consumer Discretionary,,,
+500,ZBRA,Information Technology,,,
+501,ZBH,Health Care,,,
+502,ZTS,Health Care,,,

@@ -16,9 +16,15 @@ def make_graphs():
         graph_data = pd.read_csv(graph_data_path)
 
         ticker = graph_data.loc[ticker_index]['ticker']
-
-        up = graph_data[np.fromstring(graph_data.closed.to_numpy()) >= np.fromstring(graph_data.open.to_numpy())]
-        down = graph_data[np.fromstring(graph_data.closed.to_numpy()) < np.fromstring(graph_data.open.to_numpy())]
+        current_stock = graph_data.loc[ticker_index]
+        print(current_stock)
+        print(current_stock.open[3])
+        current_stock_frame = {'open': np.fromstring(current_stock.open.strip("[]"), dtype=float), 'closed': current_stock.closed,
+                               'high': current_stock.high, 'low': current_stock.low,
+                               'index': current_stock.index}
+        print(current_stock_frame)
+        up = current_stock_frame[current_stock_frame.closed >= current_stock_frame.open]
+        down = graph_data[current_stock_frame.closed < current_stock_frame.open]
         print(up)
         print(down)
         width = 0.5
