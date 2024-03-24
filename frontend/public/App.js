@@ -244,12 +244,12 @@ function Clients(){
   className = "graphs"
   onPageChange={(event) => setPage(event.selected)}
   pageCount={Math.ceil(rows.length / n)}
-  breakLabel="..."
+  breakLabel="."
   previousLabel={
-    "<"
+    "←"
   }
   nextLabel={
-    ">"
+    "→"
   }
 />
 
