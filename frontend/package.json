@@ -10,6 +10,7 @@
     "express": "^4.19.1",
     "file-saver": "^2.0.5",
     "fs": "^0.0.1-security",
+    "mpld3": "^0.5.10",
     "nodemon": "^3.1.0",
     "react": "^18.2.0",
     "react-auth-kit": "^3.1.3",
