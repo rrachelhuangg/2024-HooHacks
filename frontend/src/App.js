@@ -17,9 +17,29 @@ function NavBar(){
 </ul></>);
 }
 
+function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
+  return(<>
+    <div>{clientName}</div>
+    <div>{desiredReturns}</div>
+    <div>{dueDate}</div>
+    <div>{givenMoney}</div>
+    </>);
+}
+
+function DueClients(props){
+  const [displayDueClients, setDueClients] = useState(props.displayDueClient);
+  if(displayDueClients==true){
+    return (<ClientComponent clientName="Hello" desiredReturns = "0" dueDate = "0" givenMoney = "0"/>);
+  }
+  else{
+    return (<div>Hello World</div>);
+  }
+}
+
 var closeValues = [];
 var stockTickers = [];
 var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL","APD","ALB","ARE","LNT","ALL","AEE","AAL","AEP"];
+
 function Control(props) {
 const [displayLogin, setLogin] = useState(props.displayLogin);
 const [name, setName] = useState("");
@@ -157,6 +177,7 @@ function App() {
   return (
     <>
     <Control displayLogin={true} />
+    <DueClients displayDueClient={true}/>
   </>
   );
 }
