@@ -50,7 +50,7 @@ color:white;}
 .column {
   padding: 16px;
   /* height: 100%; */
-  margin: 5px;
+  margin: 1px;
   background-color: #333;
   outline: 1px dotted white;
 }
@@ -68,7 +68,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #338a44;
+  background-color: #333;
 }
 
 li {
@@ -97,7 +97,7 @@ li a:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
   background: rgb(118, 255, 159);
-  padding: 5px 40px;
+  padding: 5px 65px;
   border-radius: 4px;
   font-weight: normal;
   text-transform: uppercase;
@@ -108,7 +108,7 @@ li a:hover {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.8);
   background: rgb(253, 136, 96);
-  padding: 5px 40px;
+  padding: 5px 65px;
   border-radius: 4px;
   font-weight: normal;
   text-transform: uppercase;
@@ -168,8 +168,66 @@ li a:hover {
   width:30vw;
 }
 
+.logoHeader{
+  width:15vw;
+}
+
 .logoContainer{
   text-align:center;
   margin-top:10vh;
 }
 
+.clientComponent{
+  outline: 1px dotted white;
+  margin-top:1.5vh;
+  margin-bottom:1.5vh;
+  border-radius: 2.5vh;
+  padding-top:1vh;
+  padding-bottom:1vh;
+}
+
+.acceptedClientComponent{
+  outline: 1px dotted white;
+  margin-top:1.5vh;
+  margin-bottom:1.5vh;
+  border-radius: 2.5vh;
+  padding-top:1vh;
+  padding-bottom:1vh;
+  background-color: #61dafb;
+}
+
+.acceptButton {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgb(118, 255, 159);
+  padding: 2.5px 15px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.acceptButton:hover {
+  color: rgb(219, 219, 219);
+  background: rgb(46, 161, 81);
+  cursor: pointer;
+  font-weight:bold;
+}
+
+.declineButton {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.8);
+  background: rgb(253, 136, 96);
+  padding: 2.5px 15px;
+  border-radius: 4px;
+  font-weight: normal;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.declineButton:hover {
+  color: rgb(223, 223, 223);
+  font-weight: bold;
+  background: rgb(255, 113, 66);
+  cursor: pointer;
+}

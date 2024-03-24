@@ -10,27 +10,38 @@ import ReactPaginate from "react-paginate"; // for pagination
 function NavBar(){
   return(<>
   <ul className = "header">
-  <li><a href="default.asp">Home</a></li>
-  <li><a href="news.asp">News</a></li>
-  <li><a href="contact.asp">Contact</a></li>
-  <li><a href="about.asp">About</a></li>
+  <li><img src = "./Logo.png" className="logoHeader"/></li>
 </ul></>);
 }
 
+let acceptedClients = {};
 function ClientComponent({clientName, desiredReturns, dueDate, givenMoney}){
+  const [bgC, setBGC] = useState("");
+  const [vB, setVB] = useState("visible");
+  function acceptClient(){
+    acceptedClients[clientName]=[desiredReturns, dueDate, givenMoney];
+    setBGC("red");
+    setVB("hidden");
+  }
+
+
   return(<>
-    <div>{clientName}</div>
-    <div>{desiredReturns}</div>
-    <div>{dueDate}</div>
-    <div>{givenMoney}</div>
+    <div className = "clientComponent" style={{backgroundColor:bgC}}>
+    <div><strong>{clientName}</strong></div>
+    <div>Desired Returns: {desiredReturns}</div>
+    <div>Due In {dueDate} Days</div>
+    <div>Provided Money: {givenMoney}</div>
+    <div style={{visibility:vB}}>
+    <button className = "acceptButton" onClick = {acceptClient}>Accept</button><button className = "declineButton">Decline</button>
+    </div></div>
     </>);
 }
 
-var pseudoRandom = 0;
+
 var closeValues = [];
 var stockTickers = [];
-var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL","APD","ALB","ARE","LNT","ALL","AEE","AAL","AEP"];
-
+var stockz = ["MMM","AOS","ABT","ACN","AMD","AES","AFL","APD","ALB","ARE","LNT","ALL","AEE","AAL","AEP","AXP","AIG","AMT"];
+//AMD is the last png obtained
 function Control(props) {
 const [displayLogin, setLogin] = useState(props.displayLogin);
 const [name, setName] = useState("");
@@ -42,14 +53,12 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
 
   function TickerDisplay({closeVal, stockTicker}){
     function buy(){
-      pseudoRandom+=1
       if(money-parseFloat(closeVal.trim())>=0){
         setStockPortfolio([...stockPortfolio, " ", stockTicker]);
         setMoney(money-parseFloat(closeVal.trim()));
       }
     }
     function sell(){
-      pseudoRandom+=1
       var temp = stockPortfolio;
       if(temp.filter(s => s !== stockTicker).length!=(stockPortfolio.length)){
         setMoney(money+parseFloat(closeVal.trim()));
@@ -118,6 +127,47 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
   const handleSubmit = (event) => {
     setLogin(false);
   }
+
+  function Clients(){
+    let clients = [];
+    for(let i = 0; i < 3; i++){
+      let clientNames = [
+        "Innovatech Solutions",
+        "TechGenius",
+        "CodeCrafters Inc.",
+        "ByteWorks Technology",
+        "DigitalDreams Tech",
+        "NexTech Innovations",
+        "CyberNest Solutions",
+        "QuantumLeap Tech",
+        "Synapse Systems",
+        "CloudSavvy Tech",
+        "FutureForge Technologies",
+        "InfinitiTech Labs",
+        "DataDynamo",
+        "Streamline Solutions",
+        "PixelPulse Technology",
+        "TechTonic Innovations",
+        "InnovaSoft",
+        "ByteBurst Tech",
+        "Visionary Ventures Inc.",
+        "CodeWave Tech",
+        "InfiniteLoop Solutions",
+        "TechSphere Innovations",
+        "DataDynasty",
+        "CyberCrafters Inc.",
+        "QuantumShift Technology"
+    ]
+    ;
+      let desiredReturn = Math.floor(Math.random() * (100));
+      let DueDate = Math.floor(Math.random() * (100));
+      let givenMoneys = Math.floor(Math.random() * (100));
+      let clientName = clientNames[Math.floor(Math.random()*26)];
+      clients.push(<ClientComponent clientName = {clientName} desiredReturns = {desiredReturn} dueDate = {DueDate} givenMoney = {givenMoneys}/>)
+    }
+    
+    return(<>{clients}</>);
+  }
   //scuffed way of redirecting after login (toggles login stuff)
   if (displayLogin) {
     return(<>
@@ -132,10 +182,6 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
         />
       <div><input className = "inputField" type="submit" /></div>
     </form></>);
-  }
-
-  if(pseudoRandom%3==0){
-    //make random clients here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
   }
 
   if(dueDisplay){
@@ -167,14 +213,19 @@ const [stockPortfolio, setStockPortfolio] = useState([]);
   }
 />
 
+
+
   </div>
   <div class="column">
     <h2> Clients </h2>
     <div className = "clientButtons">
     <button className = "clientButton" onClick = {toggleDueDisplay}>Client Information</button>
+
+    <Clients/>
+    
+    {/* <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
     <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
-    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
-    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/>
+    <ClientComponent clientName="Hello" desiredReturns="0" dueDate="0" givenMoney="0"/> */}
     </div>
   </div>
 </div> </>);}
