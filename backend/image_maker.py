@@ -18,12 +18,16 @@ def make_graphs(graph_data_path):
     ticker_index = 0
     while(loop_running):
         current_ticker = tickers[ticker_index]
-        graph_data = pd.read_csv(graph_data_path + current_ticker + ".csv")
+        error = True
+        while(error):
+            error = False
+            try:
+                graph_data = pd.read_csv(graph_data_path + current_ticker + ".csv")
+            except:
+                error = True
 
         up = graph_data[graph_data.closed >= graph_data.open]
         down = graph_data[graph_data.closed < graph_data.open]
-        print(up)
-        print(down)
         width = 0.5
         width2 = 0.1
         col1 = "red"
@@ -37,17 +41,16 @@ def make_graphs(graph_data_path):
 
 
         plt.title("%s Stock From %s - %s" % (current_ticker, start_dates[ticker_index], datetime.now()))
-        plt.xlabel("Number of Hours Into the Week Time Span")
         plt.xlim(0, len(graph_data.index))
         plt.ylabel("Stock Value in USD")
         plt.ylim(min(graph_data.low)-0.01*min(graph_data.low), max(graph_data.high) + 0.01*max(graph_data.high)) #setting the bounds for the y-axis
         plt.savefig(graph_data_path + "{}.png".format(current_ticker))
 
         ticker_index = ticker_index + 1
-        if ticker_index > len(graph_data.index):
+        if ticker_index >= len(string_data.index):
             ticker_index = 0
-        
-        time.sleep(5)
+        print("printed " + current_ticker)
+        #time.sleep(5)
 
 make_graphs(graph_data_path)
 
